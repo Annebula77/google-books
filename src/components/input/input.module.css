@@ -1,0 +1,33 @@
+.input__container {
+  position: relative;
+  width: 600px;
+
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  padding-right: 0;
+  /* Место под кнопку с лупой */
+  border-radius: 35px;
+  outline: none;
+  border-color: rgb(205, 133, 63);
+  border-width: 4px;
+  background-color: rgb(224, 255, 255);
+
+}
+
+input:focus {
+  border-color: rgb(128, 0, 0);
+}
+
+.search__button {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+}
