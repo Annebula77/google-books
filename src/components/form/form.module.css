@@ -21,6 +21,7 @@
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
+  font-family: 'Roboto Mono', monospace;
   gap: 10px;
   padding: 0;
   margin: 0;
@@ -30,7 +31,8 @@
   font-size: 20px;
   font-weight: 200;
   line-height: 1.2;
-  color: rgb(224, 255, 255);
+  color: rgb(255, 245, 238);
+  text-transform: none;
   margin: 0;
   padding: 0;
 
