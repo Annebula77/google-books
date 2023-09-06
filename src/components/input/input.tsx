@@ -1,23 +1,23 @@
-import React, { useState, KeyboardEvent, ChangeEvent } from "react";
+import React, { KeyboardEvent, ChangeEvent } from "react";
 import styles from "./input.module.css";
 
 export interface InputProps {
   placeholder: string;
   onSearch: (value: string) => void;
+  onChange: (value: string) => void;
+  value: string;
 }
 
-export const Input: React.FC<InputProps> = ({ placeholder, onSearch }) => {
+export const Input: React.FC<InputProps> = ({ placeholder, onSearch, onChange, value }) => {
 
-  const [value, setValue] = useState<string>("");
-
-  const handleKeyDown = (event: KeyboardEvent) => {
-    if (event.key === "Enter") {
+  const handleKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === "Enter" && onSearch) {
       onSearch(value);
     }
   };
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setValue(event.target.value);
+    onChange(event.target.value);
   };
 
   return (
@@ -29,12 +29,15 @@ export const Input: React.FC<InputProps> = ({ placeholder, onSearch }) => {
         onChange={handleChange}
         onKeyDown={handleKeyDown}
       />
-      <button
-        className={styles.search__button}
-        onClick={() => onSearch(value)}
-      >
-        🔍
-      </button>
+
+      {onSearch && (
+        <button
+          className={styles.search__button}
+          onClick={() => onSearch(value)}
+        >
+          🔍
+        </button>
+      )}
     </div>
   );
 };

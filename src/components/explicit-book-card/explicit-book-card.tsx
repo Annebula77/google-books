@@ -31,7 +31,7 @@ export const ExplicitBookCard = ({ book }: { book: BookItem }) => {
             }
           }}
         >
-          {book.volumeInfo.categories ? book.volumeInfo.categories.join(' / ') : 'No Category'}
+          {book.volumeInfo.categories ? book.volumeInfo.categories.join(' / ') : ''}
         </button>
         <h2 className={styles.title}>{book.volumeInfo.title}</h2>
         <button
@@ -42,11 +42,11 @@ export const ExplicitBookCard = ({ book }: { book: BookItem }) => {
             }
           }}
         >
-          {book.volumeInfo.authors ? book.volumeInfo.authors.join(' / ') : 'Unknown Author'}
+          {book.volumeInfo.authors ? book.volumeInfo.authors.join(' / ') : ''}
         </button>
 
         <p className={styles.description}>
-          {book.volumeInfo.description ? book.volumeInfo.description : 'No description'}
+          {book.volumeInfo.description ? book.volumeInfo.description : ''}
         </p>
       </div>
     </div>

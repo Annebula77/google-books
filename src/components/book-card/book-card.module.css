@@ -7,6 +7,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  text-decoration: none;
   width: 282px;
   justify-self: center;
   align-items: flex-start;
@@ -14,6 +15,7 @@
   margin: 0;
   gap: 10px;
   overflow: hidden;
+  z-index: 0;
 }
 
 .card__image {
@@ -28,7 +30,7 @@
   padding: 0;
 }
 
-.category__button {
+.category {
   box-sizing: border-box;
   text-align: left;
   font-size: 16px;
@@ -38,42 +40,33 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  border: none;
-  background: none;
-  cursor: pointer;
-  transition: ease;
-  transition-duration: 0.5s;
   width: 80%;
   margin: 0 0 20px;
   padding: 10px 0;
-}
-
-.category__button:hover {
-  opacity: 0.5;
+  z-index: 2;
 }
 
 .title {
   box-sizing: border-box;
   display: flex;
+  text-align: left;
   font-size: 20px;
   font-weight: 700;
   line-height: 1.2;
   color: rgb(47, 79, 79);
-  max-width: 220px;
+  max-width: 100%;
   margin: 0;
   padding: 10px 0 0;
 }
 
 .author {
   box-sizing: border-box;
+  text-align: left;
   font-size: 16px;
   font-weight: 700;
   line-height: 1.2;
   color: rgb(112, 128, 144);
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-  width: 180px;
+  width: 100%;
   margin: 0;
   padding: 0;
 }

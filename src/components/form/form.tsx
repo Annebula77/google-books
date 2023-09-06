@@ -1,6 +1,6 @@
 import React, { useState, FormEvent } from 'react';
-import { Input, InputProps } from '../input/input';
-import { Select, SelectProps } from '../select/select';
+import { Input } from '../input/input';
+import { Select } from '../select/select';
 import { categoryOptions, sortingOptions } from '../../utils/consts';
 import styles from './form.module.css'
 
@@ -18,13 +18,23 @@ export const SearchForm: React.FC<SearchFormProps> = ({ onSearch }) => {
     onSearch(searchValue, category, sorting);
   };
 
+  const handleInputChange = (value: string) => {
+    setSearchValue(value);
+  };
+
+  const handleInputSearch = (value: string) => {
+    // Вы можете добавить дополнительную логику здесь, если нужно
+    setSearchValue(value);
+  };
+
+
   return (
     <form onSubmit={handleSubmit} className={styles.form}>
       <Input
         placeholder="Search"
-        onSearch={value => {
-          setSearchValue(value);
-        }}
+        value={searchValue}
+        onChange={handleInputChange}
+        onSearch={handleInputSearch}
       />
       <div className={styles.selector__container}>
         <div className={styles.slot}>
