@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: rgb(76, 89, 101);
+  margin: 0;
+  padding: 10px 0 30px;
+}
