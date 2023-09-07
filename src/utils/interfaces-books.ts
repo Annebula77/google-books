@@ -22,4 +22,7 @@ export type BookState = {
   books: Books;
   status: 'idle' | 'loading' | 'succeeded' | 'failed';
   error: string | null;
+  searchValue: string;
+  category: string;
+  sorting: string;
 };
