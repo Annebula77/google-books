@@ -1,5 +1,4 @@
 import styles from './total.module.css';
-import React from 'react';
 import { mockData } from '../../utils/mock-data';
 
 export const TotalBooks = () => {

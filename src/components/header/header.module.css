@@ -4,7 +4,7 @@
   align-items: center;
   box-sizing: border-box;
   width: 100%;
-  height: 40vh;
+  height: 35vh;
   background-image: url(../../images/books-blue.png);
   background-repeat: no-repeat;
   background-size: cover;
@@ -21,4 +21,55 @@
   text-transform: none;
   margin: 0;
   padding: 30px 0 30px;
+}
+
+
+@media (max-width: 1500px) {
+  .header {
+    height: 40vh;
+  }
+
+  .title {
+    font-size: 38px;
+  }
+
+}
+
+@media (max-width: 1200px) and (orientation: portrait) {
+  .header {
+    height: 45vh;
+  }
+
+}
+
+@media (max-width: 1200px) and (orientation: landscape) {
+  .header {
+    height: 70vh;
+  }
+
+}
+
+@media (max-width: 768px) and (orientation: landscape) {
+  .header {
+    height: 80vh;
+  }
+
+}
+
+@media (max-width: 768px) and (orientation: portrait) {
+  .header {
+    height: 50vh;
+  }
+
+}
+
+@media (max-width: 425px) {
+  .header {
+    height: 50vh;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
 }
