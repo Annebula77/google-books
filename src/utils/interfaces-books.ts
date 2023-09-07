@@ -21,6 +21,7 @@ export interface Books {
 export interface BooksResponse {
   totalItems: number;
   items: BookItem[];
+  query: string;
 }
 
 export type BookState = {
@@ -29,4 +30,5 @@ export type BookState = {
   error: string | null;
   currentPage: number;
   totalPages: number;
+  currentQuery: string;
 };

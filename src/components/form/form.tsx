@@ -22,6 +22,9 @@ export const SearchForm: React.FC<SearchFormProps> = () => {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
+
+    if (!searchValue.trim()) return;
+
     dispatch(loadBooks({ query: searchValue, category, orderBy: sorting }));
     navigate("/result", { state: { query: searchValue, category, orderBy: sorting } });
   };

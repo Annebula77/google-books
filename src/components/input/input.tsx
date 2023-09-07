@@ -32,6 +32,7 @@ export const Input: React.FC<InputProps> = ({ placeholder, onSubmit, onChange, v
       {onSubmit && (
         <button
           className={styles.search__button}
+          disabled={!value.trim()}
           onClick={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
             if (onSubmit && value.trim() !== "") {
               e.preventDefault();

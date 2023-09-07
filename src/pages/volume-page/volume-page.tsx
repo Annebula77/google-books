@@ -1,5 +1,5 @@
 import { Main } from '../../components/main/main';
-import { SingleBook } from '../../components/explicit-book-card/singleBook';
+import { ExplicitBookCard } from '../../components/explicit-book-card/explicit-book-card';
 
 
 export const VolumePage = () => {
@@ -7,7 +7,7 @@ export const VolumePage = () => {
   return (
     <>
       <Main>
-        <SingleBook />
+        <ExplicitBookCard />
       </Main>
     </>
   );
