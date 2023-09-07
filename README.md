@@ -6,7 +6,8 @@
 
 Приложение для поиска и просмотра информации о книгах:
 
-- Адаптированное прод разные устройства и ориентацию приложение, с акцентом на разработку функционала и корректное взаимодействие с API.
+- Адаптированное под разные устройства и ориентацию приложение, с акцентом на разработку функционала и корректное взаимодействие с API Google Books.
+- Поиск книг по ключевым словам, категориям и типу.
 - Возможность просмотра детальной информации о книге.
 - Работа приложения тестируется при помощи Cypress.
 
@@ -26,28 +27,28 @@
 1. Склонировать репозиторий и перейти в него:
 
    ```bash
-   git clone https://github.com/Annebula77/google-books-search.git
-   cd google-books-search
+   git clone https://github.com/Annebula77/google-books.git
+   cd google-books
    ```
 
 2. Установить зависимости:
 
-```bash
-npm i
-```
+   ```bash
+   npm i
+   ```
 
 3. Запустить проект:
 
-```bash
-npm start
-```
+   ```bash
+   npm start
+   ```
 
 4. Запустить при помощи Docker:
 
-```bash
-docker pull annebula77/test-future:latest
-docker run -p 8080:80 annebula77/test-future:latest
-```
+   ```bash
+   docker pull annebula77/test-future:latest
+   docker run -p 8080:80 annebula77/test-future:latest
+   ```
 
 ## Автор
 
