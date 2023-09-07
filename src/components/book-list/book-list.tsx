@@ -11,7 +11,7 @@ interface BookListProps {
 export const BookList: React.FC<BookListProps> = ({ searchParams }) => {
   const dispatch = useAppDispatch();
 
-  const books = useAppSelector(state => state.books.books.items);
+  const books = useAppSelector(state => state.books.response.items);
   const status = useAppSelector(state => state.books.status);
 
   useEffect(() => {

@@ -18,11 +18,15 @@ export interface Books {
   items: BookItem[];
 }
 
+export interface BooksResponse {
+  totalItems: number;
+  items: BookItem[];
+}
+
 export type BookState = {
-  books: Books;
+  response: BooksResponse;
   status: 'idle' | 'loading' | 'succeeded' | 'failed';
   error: string | null;
-  searchValue: string;
-  category: string;
-  sorting: string;
+  currentPage: number;
+  totalPages: number;
 };

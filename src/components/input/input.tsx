@@ -3,16 +3,16 @@ import styles from "./input.module.css";
 
 export interface InputProps {
   placeholder: string;
-  onSearch: (value: string) => void;
+  onSubmit?: (e: React.FormEvent<HTMLInputElement>) => void;
   onChange: (value: string) => void;
   value: string;
 }
 
-export const Input: React.FC<InputProps> = ({ placeholder, onSearch, onChange, value }) => {
+export const Input: React.FC<InputProps> = ({ placeholder, onSubmit, onChange, value }) => {
 
   const handleKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
-    if (event.key === "Enter" && onSearch) {
-      onSearch(value);
+    if (event.key === "Enter" && onSubmit && value.trim() !== "") {
+      onSubmit(event);
     }
   };
 
@@ -29,15 +29,20 @@ export const Input: React.FC<InputProps> = ({ placeholder, onSearch, onChange, v
         onChange={handleChange}
         onKeyDown={handleKeyDown}
       />
-
-      {onSearch && (
+      {onSubmit && (
         <button
           className={styles.search__button}
-          onClick={() => onSearch(value)}
+          onClick={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+            if (onSubmit && value.trim() !== "") {
+              e.preventDefault();
+              onSubmit(e as any);
+            }
+          }}
         >
           🔍
         </button>
       )}
+
     </div>
   );
 };

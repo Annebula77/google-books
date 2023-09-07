@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { Input } from '../input/input';
 import { Select } from '../select/select';
 import { categoryOptions, sortingOptions } from '../../utils/consts';
-import { bookSlice } from '../../service/book-slice/book-slice'
+import { updateSearchValue, updateCategory, updateSorting } from '../../service/form-slice/form-slice';
 import styles from './form.module.css'
 
 interface SearchFormProps {
@@ -16,9 +16,9 @@ export const SearchForm: React.FC<SearchFormProps> = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
-  const searchValue = useAppSelector(state => state.books.searchValue);
-  const category = useAppSelector(state => state.books.category);
-  const sorting = useAppSelector(state => state.books.sorting);
+  const searchValue = useAppSelector(state => state.searchForm.searchValue);
+  const category = useAppSelector(state => state.searchForm.category);
+  const sorting = useAppSelector(state => state.searchForm.sorting);
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
@@ -26,20 +26,20 @@ export const SearchForm: React.FC<SearchFormProps> = () => {
     navigate("/result", { state: { query: searchValue, category, orderBy: sorting } });
   };
 
-
   return (
     <form onSubmit={handleSubmit} className={styles.form}>
       <Input
         placeholder="Search"
         value={searchValue}
-        onChange={(value) => dispatch(bookSlice.actions.updateSearchValue()))}
+        onChange={(value) => dispatch(updateSearchValue(value))}
+        onSubmit={handleSubmit}
       />
       <div className={styles.selector__container}>
         <div className={styles.slot}>
           <h2 className={styles.search__type}>Categories</h2>
           <Select
             options={categoryOptions}
-            onChange={(value) => dispatch(updateCategory())}
+            onChange={(value) => dispatch(updateCategory(value))}
             value={category}
           />
         </div>
