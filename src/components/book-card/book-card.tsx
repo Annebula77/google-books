@@ -4,10 +4,11 @@ import { BookItem } from '../../utils/interfaces-books';
 
 
 export const BookCard = ({ book }: { book: BookItem }) => {
+  const imageUrl = book.volumeInfo.imageLinks?.smallThumbnail || '';
 
   return (
-    <Link to={`/result/${book.id}`} className={styles.card__containter}>
-      <img src={book.volumeInfo.imageLinks.smallThumbnail} alt={book.volumeInfo.title} className={styles.card__image} />
+    <Link to={`/result/${book.id}`} className={styles.card__containter} data-test-id="card">
+      <img src={imageUrl} alt={book.volumeInfo.title} className={styles.card__image} />
       <p
         className={styles.category}
       >

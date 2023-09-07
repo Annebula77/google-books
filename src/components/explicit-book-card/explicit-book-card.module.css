@@ -17,9 +17,8 @@
   align-items: baseline;
   box-sizing: border-box;
   width: 30%;
-  height: 100%;
   margin: 0;
-  padding: 100px 0 0;
+  padding: 50px 0 0;
 
 
 }
@@ -27,7 +26,6 @@
 .card__image {
   display: flex;
   box-sizing: border-box;
-  width: 50%;
   object-fit: cover;
   padding: 0;
 }
@@ -42,7 +40,7 @@
   padding: 40px 70px 0 0;
 }
 
-.category__button {
+.category {
   box-sizing: border-box;
   text-align: left;
   font-size: 20px;
@@ -50,17 +48,8 @@
   line-height: 1.2;
   color: rgb(112, 128, 144);
   width: 100%;
-  border: none;
-  background: none;
-  cursor: pointer;
-  transition: ease;
-  transition-duration: 0.5s;
   margin: 0;
   padding: 0;
-}
-
-.category__button:hover {
-  opacity: 0.5;
 }
 
 .title {
@@ -83,19 +72,11 @@
   font-weight: 700;
   line-height: 1.2;
   color: rgb(112, 128, 144);
-  border: none;
-  background: none;
-  cursor: pointer;
-  transition: ease;
-  transition-duration: 0.5s;
   width: 100%;
   margin: 0 0 30px;
   padding: 0 0 30px;
 }
 
-.author:hover {
-  opacity: 0.5;
-}
 
 .description {
   box-sizing: border-box;

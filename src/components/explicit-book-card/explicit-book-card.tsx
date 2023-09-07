@@ -1,17 +1,18 @@
 import styles from './explicit-book-card.module.css';
-import { BookItem } from '../../utils/interfaces-books';
+import { useAppSelector } from '../../utils/hooks';
+import { useParams } from 'react-router-dom';
 
-export const ExplicitBookCard = ({ book }: { book: BookItem }) => {
+export const ExplicitBookCard = () => {
 
-  const handleSortByCategory = (categories: string[]) => {
-    // Здесь ваш код для сортировки
-    console.log("Сортировка по категориям:", categories);
-  };
+  const { id } = useParams<{ id: string }>();
+  const books = useAppSelector(state => state.books.response.items);
 
-  const handleSortByAuthor = (authors: string[]) => {
-    // Здесь ваш код для сортировки
-    console.log("Сортировка по категориям:", authors);
-  };
+  const book = books.find(b => b.id === id);
+
+  if (!book) {
+    return <p>Book not found!</p>;
+  }
+
 
   return (
     <div className={styles.card__containter}>
@@ -22,29 +23,18 @@ export const ExplicitBookCard = ({ book }: { book: BookItem }) => {
           className={styles.card__image}
         />
       </div>
-      <div className={styles.data__container}>
-        <button
-          className={styles.category__button}
-          onClick={() => {
-            if (book.volumeInfo.categories) {
-              handleSortByCategory(book.volumeInfo.categories);
-            }
-          }}
+      <div className={styles.data__container} data-test-id="bookPage">
+        <h2
+          className={styles.category}
         >
           {book.volumeInfo.categories ? book.volumeInfo.categories.join(' / ') : ''}
-        </button>
+        </h2>
         <h2 className={styles.title}>{book.volumeInfo.title}</h2>
-        <button
+        <h3
           className={styles.author}
-          onClick={() => {
-            if (book.volumeInfo.authors) {
-              handleSortByAuthor(book.volumeInfo.authors)
-            }
-          }}
         >
           {book.volumeInfo.authors ? book.volumeInfo.authors.join(' / ') : ''}
-        </button>
-
+        </h3>
         <p className={styles.description}>
           {book.volumeInfo.description ? book.volumeInfo.description : ''}
         </p>
