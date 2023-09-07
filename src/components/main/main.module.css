@@ -12,3 +12,17 @@
   margin: 0;
   padding-bottom: 30px;
 }
+
+@media (max-width: 768px) {
+  .main {
+    padding: 0 10px 0;
+  }
+
+}
+
+@media (max-width: 425px) {
+  .main {
+    padding: 0;
+  }
+
+}
