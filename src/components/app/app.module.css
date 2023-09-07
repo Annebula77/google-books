@@ -1,0 +1,14 @@
+.app {
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* * {
+  box-shadow: 0 0 2px red;
+} */
