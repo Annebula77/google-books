@@ -39,7 +39,7 @@ export const SearchForm: React.FC<SearchFormProps> = () => {
       />
       <div className={styles.selector__container}>
         <div className={styles.slot}>
-          <h2 className={styles.search__type}>Categories</h2>
+          <h2 className={styles.search__type} data-test-id="select1">Categories</h2>
           <Select
             options={categoryOptions}
             onChange={(value) => dispatch(updateCategory(value))}
@@ -47,7 +47,7 @@ export const SearchForm: React.FC<SearchFormProps> = () => {
           />
         </div>
         <div className={styles.slot}>
-          <h2 className={styles.search__type}>Sorting by</h2>
+          <h2 className={styles.search__type} data-test-id="select2">Sorting by</h2>
           <Select
             options={sortingOptions}
             onChange={(value) => dispatch(updateSorting(value))}

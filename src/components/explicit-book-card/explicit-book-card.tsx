@@ -23,7 +23,7 @@ export const ExplicitBookCard = () => {
           className={styles.card__image}
         />
       </div>
-      <div className={styles.data__container}>
+      <div className={styles.data__container} data-test-id="bookPage">
         <h2
           className={styles.category}
         >

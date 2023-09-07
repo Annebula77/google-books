@@ -22,7 +22,7 @@ export const Input: React.FC<InputProps> = ({ placeholder, onSubmit, onChange, v
 
   return (
     <div className={styles.input__container}>
-      <input
+      <input data-test-id="input"
         type="text"
         placeholder={placeholder}
         value={value}
