@@ -7,7 +7,7 @@ import { ResultPage } from '../../pages/result-page/result-page';
 import { VolumePage } from '../../pages/volume-page/volume-page';
 import { NotFoundPage } from '../../pages/not-found-page/not-found-page';
 
-export function App() {
+export const App = () => {
   return (
     <div className={styles.app}>
       <Header />
